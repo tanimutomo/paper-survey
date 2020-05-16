@@ -53,6 +53,10 @@ d-hacks, Jin Nakazawa Lab, SFC, Keio University
 <!-- _class: invert -->
 # Patch Pasting
 
+2006 - 2008
+
+- Search Similar Patch !
+
 ---
 
 ## Patch Pasting
@@ -129,6 +133,11 @@ d-hacks, Jin Nakazawa Lab, SFC, Keio University
 <!-- _class: invert -->
 # 1. CNN Encoder-Decoder
 
+2016 - 2017
+
+- Initial Deep Learning based approach
+- Use CNN and Adversarial Loss
+
 ---
 
 ### Context Encoder
@@ -180,30 +189,99 @@ Difference from Context Encoder
 
 ---
 
+## CNN Encoder-Decoder
+
+Advance
+- CNN and Adversarail Loss enable to learn to generate the semantically prosible contents using large scale dataset
+
+![](./images/glcic_res3.png)
+
+---
+
+## CNN Encoder-Decoder
+
+Drawback
+- Context Encoder is not perfect
+- GLCIC requires heavy post process (poisson blending)
+
+---
+
 <!-- _class: invert -->
 # 2. Additional Loss and Input
+
+2018 - 2019
+
+- Use additional information and module to improve ImIn performance
 
 ---
 
 ### GICA
 Generative Image Inpainting with Contextual Attention
 
-- hoge
+- GLCIC + Coarse-to-Fine + Contextual Attention
+
+![](./images/gica.png)
+
+---
+
+### GICA
+
+- Is there difference from GLCIC ?
+
+![](./images/gica_res1.png)
+
+- Pay attention to image structure
+
+![](./images/gica_res2.jpg)
 
 ---
 
 ### EdgeConnect
 EdgeConnect: Generative Image Inpainting with Adversarial Edge Learning
 
+- Use edge information to support image inpainting model
+  - Edge image with hole -> **Model** -> Completed edge image
+  - Completed Edge image, Color image with hole -> **Model** -> Completed color image
+
+![](./images/edgeconnect.png)
+
+---
+
+### EdgeConnect
+
+- EdgeConnect is inspired by **"lines first, color next"**
+
+![](./images/edgeconnect_res1.png)
+
 ---
 
 <!-- _class: invert -->
 # 3. Masked Convolution
 
+2018 - 2019
+
+- Filter invalid pixel information to improve performance
+- Get better performance with simple and reasonable extension
+
 ---
 
 ### Partial Convolution
 Image inpainting for irregular holes using partial convolutions
+
+- Use pixel information other than holes
+- Introduce **Mask** to filter pixel information
+
+![](./images/partialconv_sketch.jpeg)
+![](./images/partialconv_equ.png)
+
+---
+
+### Partial Convolution
+
+- More effective to irregular holes because of not using hole area pixel information
+- Achieve good performance with a simple U-Net architecture
+
+![](./images/partialconv_res1.png)
 
 ---
 
@@ -212,6 +290,7 @@ Free-form image inpainting with gated convolution
 
 ---
 
+<!-- _class: invert -->
 ## References
 - [PatchMatch: a randomized correspondence algorithm for structural image editing](https://dl.acm.org/doi/10.1145/1531326.1531330)
 - [Scene Completion Using Millions of Photographs](https://dl.acm.org/doi/abs/10.1145/1276377.1276382)
