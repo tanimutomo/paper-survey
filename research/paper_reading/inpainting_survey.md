@@ -24,6 +24,8 @@ style: |
 Tomoki Tanimura (@tanimu)
 d-hacks, Jin Nakazawa Lab, SFC, Keio University
 
+Updated at: 2020/5/19
+
 ---
 
 <!-- _class: large -->
