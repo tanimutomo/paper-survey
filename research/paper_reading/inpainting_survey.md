@@ -59,7 +59,6 @@ d-hacks, Jin Nakazawa Lab, SFC, Keio University
 
 ---
 
-## Patch Pasting
 ### PatchMatch
 1. Search Similar patch to the hole surrounding areas in an input image
 2. Paste the searched patch to the hole
@@ -67,17 +66,14 @@ d-hacks, Jin Nakazawa Lab, SFC, Keio University
 
 ---
 
-### PatchMatch
 ![](./images/patchmatch.png)
 
 ---
 
-### PatchMatch
 ![](./images/patchmatch_res1.png)
 
 ---
 
-### PatchMatch
 ![](./images/patchmatch_res2.png)
 
 ---
@@ -89,8 +85,6 @@ d-hacks, Jin Nakazawa Lab, SFC, Keio University
 ![](./images/scene_comp.png)
 
 ---
-
-### Scene Completion
 
 ![](./images/scene_comp_res1.png)
 
@@ -125,7 +119,7 @@ d-hacks, Jin Nakazawa Lab, SFC, Keio University
 -> e.g. ContextEncoder, GLCIC
 2. 1 + Additional Loss or Input
 -> e.g. GICA, EdgeConnect, StructureImIn
-3. (1 + 2 +) Masked Convolution
+3. (1 + 2 +) Feature Gating
 -> e.g. PartialConv, GatedConv
 
 ---
@@ -151,15 +145,11 @@ Context Encoders: Learning Features by Inpainting
 
 ---
 
-### Context Encoder
-
 Generate the semantically prosible contents in the hole
 
 ![](./images/context_encoder_res1.png)
 
 ---
-
-### Context Encoder
 
 - Use ImIn as Representation Learning
 - Use the encoder as feature extractor and test some vision tasks
@@ -179,8 +169,6 @@ Difference from Context Encoder
 
 ---
 
-### GLCIC
-
 - Fill the hole with semantically prosible and visually realistic contents
   - Effect of Globaly Discriminator
 - Deal with high resolution image and non-stationary image
@@ -197,8 +185,6 @@ Advance
 ![](./images/glcic_res3.png)
 
 ---
-
-## CNN Encoder-Decoder
 
 Drawback
 - Context Encoder is not perfect
@@ -224,8 +210,6 @@ Generative Image Inpainting with Contextual Attention
 
 ---
 
-### GICA
-
 - Is there difference from GLCIC ?
 
 ![](./images/gica_res1.png)
@@ -247,8 +231,6 @@ EdgeConnect: Generative Image Inpainting with Adversarial Edge Learning
 
 ---
 
-### EdgeConnect
-
 - EdgeConnect is inspired by **"lines first, color next"**
 
 ![](./images/edgeconnect_res1.png)
@@ -256,7 +238,7 @@ EdgeConnect: Generative Image Inpainting with Adversarial Edge Learning
 ---
 
 <!-- _class: invert -->
-# 3. Masked Convolution
+# 3. Feature Gating
 
 2018 - 2019
 
@@ -276,8 +258,6 @@ Image inpainting for irregular holes using partial convolutions
 
 ---
 
-### Partial Convolution
-
 - More effective to irregular holes because of not using hole area pixel information
 - Achieve good performance with a simple U-Net architecture
 
@@ -287,6 +267,51 @@ Image inpainting for irregular holes using partial convolutions
 
 ### Gated Convolution
 Free-form image inpainting with gated convolution
+
+- Introduce soft mask feature gating with **Learnable Mask**
+- Enable for user to sketch the guide to input
+
+![](https://gyazo.com/3ebbc49284e87f9ca4df13fa7b060134/thumb/1000)
+
+---
+
+- Use Convolution Kernel and SoftMask Kernel
+
+![](https://gyazo.com/7373fcb65367ece2a6124d06e35481fe/thumb/1000)
+
+---
+
+- Use the same architecture as GICA
+- Introduce Spectral-Normalized Markovian Discriminator
+
+![](https://gyazo.com/716d2314f83008a494ff85215f87fb3f/thumb/1000)
+
+---
+
+<!-- _class: invert -->
+# Summary
+
+---
+
+## How ImIn has evolved
+
+- Patch Pasting
+  - **Traditional Heuristic Approach** (reasonable, but worse performance)
+  - Search patches similar to hole surroundings and paste
+- CNN Encoder-Decoder with Adversarial Loss
+  - **Appear Deep Learning! High Perfomance!**
+  - CNN + GAN (discriminator)
+- Additinal Loss or Input
+  - **Attension or Some Extension**
+  - Attension / Edge Information
+
+--- 
+
+- Feature Gating
+  - **Improve More Fundemental Problem**
+  - Use only valid pixel information
+- (None)
+  - (Theoretical Analysis and Improvement)
 
 ---
 
