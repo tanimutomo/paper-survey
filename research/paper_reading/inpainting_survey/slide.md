@@ -36,7 +36,7 @@ Updated at: 2020/5/19
   - visually reaslistic
   - semantically plausible
 
-![](./images/what_is_ii.png)
+![](./asset/what_is_ii.png)
 
 ---
 
@@ -68,15 +68,15 @@ Updated at: 2020/5/19
 
 ---
 
-![](./images/patchmatch.png)
+![](./asset/patchmatch.png)
 
 ---
 
-![](./images/patchmatch_res1.png)
+![](./asset/patchmatch_res1.png)
 
 ---
 
-![](./images/patchmatch_res2.png)
+![](./asset/patchmatch_res2.png)
 
 ---
 
@@ -84,11 +84,11 @@ Updated at: 2020/5/19
 - Search the image similar to an input from large scale image database
 - Search similar patch and paste it to the input's hole
 
-![](./images/scene_comp.png)
+![](./asset/scene_comp.png)
 
 ---
 
-![](./images/scene_comp_res1.png)
+![](./asset/scene_comp_res1.png)
 
 ---
 
@@ -143,20 +143,20 @@ Context Encoders: Learning Features by Inpainting
 2. CNN encode the input to feature vector, then decode to the input while predicting the hole
 3. Update model parameter to minimize the difference between the decoded image and the original input
 
-![](./images/context_encoder.png)
+![](./asset/context_encoder.png)
 
 ---
 
 Generate the semantically prosible contents in the hole
 
-![](./images/context_encoder_res1.png)
+![](./asset/context_encoder_res1.png)
 
 ---
 
 - Use ImIn as Representation Learning
 - Use the encoder as feature extractor and test some vision tasks
 
-![](./images/context_encoder_res2.png)
+![](./asset/context_encoder_res2.png)
 
 ---
 
@@ -167,7 +167,7 @@ Difference from Context Encoder
 - Add dilated convolution
 - Evaluate generated image with globally and locally discriminator
 
-![](./images/glcic.png)
+![](./asset/glcic.png)
 
 ---
 
@@ -175,7 +175,7 @@ Difference from Context Encoder
   - Effect of Globaly Discriminator
 - Deal with high resolution image and non-stationary image
 
-![](./images/glcic_res1.png)
+![](./asset/glcic_res1.png)
 
 ---
 
@@ -184,7 +184,7 @@ Difference from Context Encoder
 Advance
 - CNN and Adversarail Loss enable to learn to generate the semantically prosible contents using large scale dataset
 
-![](./images/glcic_res3.png)
+![](./asset/glcic_res3.png)
 
 ---
 
@@ -208,17 +208,17 @@ Generative Image Inpainting with Contextual Attention
 
 - GLCIC + Coarse-to-Fine + Contextual Attention
 
-![](./images/gica.png)
+![](./asset/gica.png)
 
 ---
 
 - Is there difference from GLCIC ?
 
-![](./images/gica_res1.png)
+![](./asset/gica_res1.png)
 
 - Pay attention to image structure
 
-![](./images/gica_res2.jpg)
+![](./asset/gica_res2.jpg)
 
 ---
 
@@ -229,13 +229,13 @@ EdgeConnect: Generative Image Inpainting with Adversarial Edge Learning
   - Edge image with hole -> **Model** -> Completed edge image
   - Completed Edge image, Color image with hole -> **Model** -> Completed color image
 
-![](./images/edgeconnect.png)
+![](./asset/edgeconnect.png)
 
 ---
 
 - EdgeConnect is inspired by **"lines first, color next"**
 
-![](./images/edgeconnect_res1.png)
+![](./asset/edgeconnect_res1.png)
 
 ---
 
@@ -255,15 +255,15 @@ Image inpainting for irregular holes using partial convolutions
 - Use pixel information other than holes
 - Introduce **Mask** to filter pixel information
 
-![](./images/partialconv_sketch.jpeg)
-![](./images/partialconv_equ.png)
+![](./asset/partialconv_sketch.jpeg)
+![](./asset/partialconv_equ.png)
 
 ---
 
 - More effective to irregular holes because of not using hole area pixel information
 - Achieve good performance with a simple U-Net architecture
 
-![](./images/partialconv_res1.png)
+![](./asset/partialconv_res1.png)
 
 ---
 
